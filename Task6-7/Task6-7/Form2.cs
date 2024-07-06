@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
@@ -8,7 +8,7 @@ namespace Task6
     public partial class Form2 : Form
     {
         private Calculation calculation = new Calculation();
-       
+       private List<int> list = new List<int>();
         public Form2()
         {
             InitializeComponent();
@@ -16,15 +16,18 @@ namespace Task6
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
             int count = Int32.Parse(textBox1.Text);
-
+            list.Clear();
            
             Task7(count);
         }
 
         public void Task7(int count)
         {
-            List<int> list =  calculation.generateNums(count);
+            list =  calculation.generateNums(count);
+            listBox1.Items.Add("All numbers:");
             foreach (var item in list)
             {
 
