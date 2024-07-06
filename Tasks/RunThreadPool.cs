@@ -11,11 +11,7 @@ namespace MySpace
         private int start;
 
         private int end;
-        public void RunNameMutex()
-        {
-
-        }
-
+       
         public void Task1()
         {
             Thread thread = new Thread(() =>
